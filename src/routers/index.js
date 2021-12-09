@@ -1,11 +1,11 @@
 const express = require("express")
 const router = express.Router()
-const defaultRoute = require("./defaultRoute")
+const accountRoute = require("./accountRoute")
 
 const defaultRoutes = [
   {
-    path: "/defaults",
-    route: defaultRoute
+    path: "/accounts",
+    route: accountRoute
   }
 ]
 

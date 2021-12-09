@@ -2,7 +2,8 @@ const { DataTypes } = require("sequelize")
 
 const sequelize = require("../configs/sequelize");
 const RoleTypes = require("./enums/RoleTypes")
-const utils = require("../utils")
+const utils = require("../utils");
+const { compare } = require("bcrypt");
 
 const User = sequelize.define('User', {
   id: {
@@ -38,5 +39,9 @@ const User = sequelize.define('User', {
   timestamps: true,
   tableName: "users"
 })
+
+User.prototype.comparePassword = function (passwordIn) {
+  return utils.comparePassword(passwordIn, this.password)
+}
 
 module.exports = User;

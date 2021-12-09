@@ -13,3 +13,12 @@ services:
       - 3390:3306
       - 33900:33060
     restart: on-failure
+
+  redis:
+    image: redis:alpine
+    container_name: shop_redis
+    ports:
+      - 6379:6379
+    command: redis-server /usr/local/etc/redis/redis.conf 
+    volumes:
+      - ./redis.conf:/usr/local/etc/redis/redis.conf

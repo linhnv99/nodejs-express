@@ -1,9 +1,8 @@
-const ApiResponse = (code = 200, message, data) => {
+const ApiResponse = (data, code = 200, message = 'success') => {
   return {
     code,
     message,
     data
   }
 }
-
-module.exports = ApiResponse;
+module.exports = ApiResponse
