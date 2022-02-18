@@ -8,7 +8,7 @@ const ApiError = require('../utils/ApiError');
  * @returns token
  */
 const generateToken = user => {
-  const payload = {
+  const payload = { 
     iat: moment().unix(),
     id: user.id,
     username: user.username,
